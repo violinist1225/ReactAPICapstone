@@ -1,0 +1,31 @@
+.title-one{
+    color: purple;
+    font-family: 'Cinzel Decorative', cursive;
+    margin: 10%;
+    
+}
+a{
+    margin: 90px;
+    color: blue;
+    font-size: 20px;
+}
+
+.center{
+    /* display: block; */
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    width: 70%;
+    
+
+}
+.paraOne{
+    font-size: 25px;
+}
+
+
+.title-two{
+    color: peru;
+    font-family: 'Cinzel Decorative', cursive;
+
+}
