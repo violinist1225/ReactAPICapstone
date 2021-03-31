@@ -13,6 +13,7 @@ export default function Recommendation(){
         }
     }, [clicked])
   
+    //Note: 
     
 
     // brand name price_sign price currency image_link website_link description 
