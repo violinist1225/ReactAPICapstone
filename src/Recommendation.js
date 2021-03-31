@@ -1,50 +1,48 @@
 import React, {useEffect, useState, useContext} from "react"
 import {RecommendationContext} from "./RecommendationContext.js"
 import Selection from "./Selection"
+import {useLocation} from "react-router-dom"
 
 
 export default function Recommendation(){
-    const {selection, getData, clicked, setClicked, allLipstickData} = useContext(RecommendationContext)
-    console.log("Rec. component Lipstick data", allLipstickData)
+    const location = useLocation()
+    console.log(location)
+    const {getData, alllipsticksData} = useContext(RecommendationContext)
+    // console.log("Rec. component Lipstick data", alllipstickData)
     useEffect(() => {
-        getData(selection)
-        if(clicked){
-            setClicked(false)
-        }
-    }, [clicked])
-  
-    //Note: 
-    
-
-    // brand name price_sign price currency image_link website_link description 
-        
+        getData([])
+        // if(clicked){
+        //     setClicked(false)
+        // }
+    }, [])
+    console.log("Rec. component Lipstick data", alllipsticksData)
     return(
+        <div style={{backgroundColor: "pink"}}>
+    <h1 class>Here are your recommendations</h1>
+
+     {alllipsticksData && alllipsticksData.map((selection) => {
+        console.log("SELECTION.NAME",selection.name)
+        return(
         <div>
-            <p className="title-one">Here are your recommendations</p>
-            {/* {allLipstickData.map((selection) => {
-                <Selection 
-                key= {selection.id}
-                name={selection.name}
-                price={selection.price}
-                brand={selection.brand}
-                image={selection.api_featured_image}
-                
-            
-                /> */}
-
-
-
-
-            }
-
-
-
-            )
-
-
-
-            }
+        
+            <h1>{selection.name}</h1>
+            <Selection 
+                    key= {selection.id}
+                    name={selection.name}
+                    price={selection.price}
+                    brand={selection.brand}
+                    image={selection.api_featured_image}
+                    />
+     </div>
+     
+        )}) 
+        }
         </div>
     )
-}
+
+    }
+   
+        
+    
+
 

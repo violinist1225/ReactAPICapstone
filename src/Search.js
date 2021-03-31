@@ -10,13 +10,14 @@ export default function Search(){
     const [choice, setChoice] = useState('')
     const [clicked, setClicked] = useState(false)
     //how to set state of eyeliner category and link it to lipstick
-        // useEffect(() => {
-        //     getData(choice)
-        //     if(clicked){
-        //         setClicked(false)
-        //     }
+        useEffect(() => {
+            if(clicked){
+                console.log(choice)
+                getData(choice)
+                setClicked(false)
+            }
 
-        // }, [clicked])
+        }, [clicked])
     const handleSubmit=(e)=>{
         e.preventDefault()
         const {value} = e.target
@@ -24,14 +25,14 @@ export default function Search(){
         setClicked(true)
          console.log("Submitting...")
          setTimeout(() => {
-             history.push("/Recommendation")
+             history.push({pathname:"/Recommendation", state: allLipsticksData})
          }, 2000)
     }
 
     const handleChange=(e)=>{
         e.preventDefault()
         const {value, name} = e.target
-        setChoice({[name]: value})
+        setChoice( value)
     }
     
 
