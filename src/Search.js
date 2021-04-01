@@ -5,8 +5,8 @@ import {RecommendationContext} from "./RecommendationContext.js"
 
 export default function Search(){
     const history = useHistory()
-    const {getData, allLipsticksData} = useContext(RecommendationContext)
-    console.log("In Search Component, is alllipstick data defined?", allLipsticksData)
+    const {getData, alllipsticksData} = useContext(RecommendationContext)
+    console.log("In Search Component, is alllipstick data defined?", alllipsticksData)
     const [choice, setChoice] = useState('')
     const [clicked, setClicked] = useState(false)
     //how to set state of eyeliner category and link it to lipstick
@@ -21,11 +21,11 @@ export default function Search(){
     const handleSubmit=(e)=>{
         e.preventDefault()
         const {value} = e.target
-        getData(choice)
+        // getData()
         setClicked(true)
          console.log("Submitting...")
          setTimeout(() => {
-             history.push({pathname:"/Recommendation", state: allLipsticksData})
+             history.push({pathname:"/Recommendation",  choice})
          }, 2000)
     }
 
@@ -37,8 +37,8 @@ export default function Search(){
     
 
     return(
-        <div>
-            <form onSubmit= {handleSubmit}>
+        <div id="search">
+            <form id="form" onSubmit= {handleSubmit}>
                  
         <label>
                 Which Category of LipServices Are You Interested In?
@@ -48,6 +48,8 @@ export default function Search(){
                         <option value="product_type=blush" name="blush" onChange={handleChange}>Blush</option>
                         <option value="product_type=bronzer" name="bronzer" onChange={handleChange} >Bronzer</option>
                         <option value="product_type=eyebrow" name="eyebrow" onChange={handleChange}>Eyebrow</option>
+                        <option value="product_type=eyeshadow" name="eyeshadow" onChange={handleChange}>Eyeshadow</option>
+                        <option value="product_type=mascara" name="mascara" onChange={handleChange}>Mascara</option>
                     </select>
         </label>
                 <button>Submit</button>
@@ -57,58 +59,3 @@ export default function Search(){
     )
 }
 
-
-// onChange={handleChange}
-
-
-
-
-
-
-
-// const [choice, setChoice] = useState('Canadian')
-//     const [allMakeupData, setAllMakeupData] = useState([])
-//     let priceRangeinDollars = 10
-//     let brandName = 
-//     if(maxPrice === 10){
-//         setChoice('price_greater_than=10.00')
-//     }
-
-//     React.useEffect(() => {
-//        axios.get(`http://makeup-api.herokuapp.com/api/v1/products.json?${choice}"
-//        //http://makeup-api.herokuapp.com/api/v1/products.json?price_greater_than=10.00
-       
-//        .then(res => setAllMakeUpData(makeup.data) )//get all the data and save in state of an array )
-//        .catch(err => console.log(err))
-//        )
-       
-       
-
-
-// const handleChange=(e) =>{
-    //     const {value, name, checked} = e.target
-    // const { form } = state;
-    // let MakeupObj = {};
-    // if (name === "choice") {
-    //   // handle the change event of makeup field
-    //   if (checked) {
-    //     // push selected value in list
-    //     MakeupObj = { ...form };
-    //     MakeupObj[name].push(value);
-    //   } else {
-    //     // remove unchecked value from the list
-    //     formObj = {
-    //       ...form,
-    //       [name]: form[name].filter(x => x !== value)
-    //     };
-    //   }
-    // } else {
-    //   // handle change event except
-    //   MakeupObj = {
-    //     ...form,
-    //     [name]: value
-    //   };
-    // }
-    // this.setChoice({ form: MakeupObj });
-
-    // }

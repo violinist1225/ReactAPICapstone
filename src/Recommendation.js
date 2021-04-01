@@ -10,12 +10,13 @@ export default function Recommendation(){
     const {getData, alllipsticksData} = useContext(RecommendationContext)
     // console.log("Rec. component Lipstick data", alllipstickData)
     useEffect(() => {
-        getData([])
-        // if(clicked){
-        //     setClicked(false)
-        // }
+        if(location.choice){
+        getData(location.choice)
+        console.log(location.choice)
+        }
     }, [])
-    console.log("Rec. component Lipstick data", alllipsticksData)
+
+    
     return(
         <div style={{backgroundColor: "pink"}}>
     <h1 class>Here are your recommendations</h1>

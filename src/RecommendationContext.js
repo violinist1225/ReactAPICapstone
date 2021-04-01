@@ -8,11 +8,7 @@ function RecommendationProvider(props){
    
     const [alllipsticksData, setAlllipsticksData] = useState([])
 
-    // key= {selection.id}
-    //             name={selection.name}
-    //             price={selection.price}
-    //             brand={selection.brand}
-    //             image={selection.api_featured_image}
+
     
     function getData(selection) {
         axios.get(`http://makeup-api.herokuapp.com/api/v1/products.json?${selection}`)   

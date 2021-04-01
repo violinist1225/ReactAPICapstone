@@ -1,16 +1,26 @@
 import React from "react"
 import "./styles.css"
+import {useHistory} from "react-router-dom"
 
 export default function Home(){
 
+const history = useHistory()
+const handleSearch=()=>{
+    
+        history.push({pathname:"/Search"})
+    
+}
     return(
+    <div id="homeContainer">
         <div class="centeredPic">
-            <h1 class="title-one">See The Best Lip-Based Makeup Products Customized to Your Preferences </h1>
+            <h1 class="title-one">Search for The Best Makeup </h1>
 
-            <img src="https://media.allure.com/photos/5de5639e1d39a50008da6acd/16:9/w_2560%2Cc_limit/4xPC_KIT_LIPS_SSWARM_label.jpg" alt="Pat Mcgrath Lipsticks" width="50%" height="auto" ></img>
+            <img src="https://pyxis.nymag.com/v1/imgs/f8c/744/0d948e9a35fc2fd6aeb563ddf3c5f05d59-27-pmg-mattetrance-lipstick.rsquare.w700.jpg" alt="Pat Mcgrath Lipsticks" ></img>
   
-
-
+    
+                <button id="searchButton" onClick={handleSearch} >Search for Makeup</button>
+            
         </div>
+    </div>
     )
 }

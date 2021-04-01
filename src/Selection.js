@@ -2,7 +2,6 @@ import React from "react"
 
 
 export default function Selection(props){
-    console.log(props)
     const{title, key, name, price, brand ,image} = props 
 
     return(

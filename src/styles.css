@@ -1,15 +1,37 @@
 .title-one{
-    color: purple;
     font-family: 'Cinzel Decorative', cursive;
-    margin: 10%;
-    
+    color: rosybrown;
+    font-size: 2.1rem;
+    margin: 10% 1rem 20% 1rem;
+  
 }
-a{
-    margin: 90px;
-    color: blue;
-    font-size: 20px;
+#app{
+    background-color: black;
+    height: 100vh;
+}
+#homeContainer{
+   
+    display: flex;
 }
 
+#navBar{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1rem;
+    width: 100%;
+    margin: 0;
+}
+    
+#searchButton{
+    justify-content: center;
+    width: 27%;
+    height: 8vh;
+    background-color: tomato;
+}
+
+#buttonDiv{
+    justify-content: center;
+}
 .center{
     /* display: block; */
     margin-left: auto;
@@ -32,4 +54,41 @@ a{
 
 .centeredPic{
     padding: 0 25% 0 25%
+}
+.centeredPic > img {
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 40vw;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+#footer{
+    position: fixed;
+    bottom: 0;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    background-color: wheat;
+    color: orange;
+    font-size: 2rem;
+}
+
+#search{
+    
+    background:whitesmoke;
+    height: 100vh;
+}
+
+#form{
+    margin: 200px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: blue;
 }
